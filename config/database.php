@@ -8,9 +8,10 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'livreor');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
+define('DB_CHARSET', 'utf8mb4');
 
 // Configuration de l'application
-define('BASE_URL', 'https://livreor.test');
+define('BASE_URL', 'https://localhost');
 define('APP_NAME', 'livreor');
 define('APP_VERSION', '1.0.0');
 

@@ -56,6 +56,10 @@ function dispatch() {
     require_once $controller_file;
     
     // Nom de la fonction d'action
+    
+    
+    
+    
     $action_function = $controller_name . '_' . $action_name;
     
     // Vérifier si l'action existe
