@@ -11,7 +11,7 @@ define('DB_PASS', 'root');
 define('DB_CHARSET', 'utf8mb4');
 
 // Configuration de l'application
-define('BASE_URL', 'http://localhost');
+define('BASE_URL', 'http://livreor.test');
 define('APP_NAME', 'livreor');
 define('APP_VERSION', '1.0.0');
 
