@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ===============================================
  * FONCTIONS UTILITAIRES ESSENTIELLES - MVC STARTER
@@ -23,7 +24,8 @@
  * @return string La chaîne sécurisée
  * 
  */
-function escape($string) {
+function escape($string)
+{
     return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
 }
 
@@ -36,7 +38,8 @@ function escape($string) {
  * @param string $string La chaîne à afficher de manière sécurisée
  * 
  */
-function e($string) {
+function e($string)
+{
     echo escape($string);
 }
 
@@ -54,7 +57,8 @@ function e($string) {
  * @return string L'URL absolue complète
  * 
  */
-function url($path = '') {
+function url($path = '')
+{
     $base_url = rtrim(BASE_URL, '/');
     $path = ltrim($path, '/');
     return $base_url . '/' . $path;
@@ -69,7 +73,8 @@ function url($path = '') {
  * @param string $path Le chemin de destination (optionnel, par défaut : accueil)
  * 
  */
-function redirect($path = '') {
+function redirect($path = '')
+{
     $url = url($path);
     header("Location: $url");
     exit;
@@ -89,7 +94,8 @@ function redirect($path = '') {
  * @param string $message Le contenu du message
 
  */
-function set_flash($type, $message) {
+function set_flash($type, $message)
+{
     $_SESSION['flash_messages'][$type][] = $message;
 }
 
@@ -103,7 +109,8 @@ function set_flash($type, $message) {
  * @return array Les messages flash
  * 
  */
-function get_flash_messages($type = null) {
+function get_flash_messages($type = null)
+{
     if (!isset($_SESSION['flash_messages'])) {
         return [];
     }
@@ -132,7 +139,8 @@ function get_flash_messages($type = null) {
  * @return bool true si POST, false sinon
  * 
  */
-function is_post() {
+function is_post()
+{
     return $_SERVER['REQUEST_METHOD'] === 'POST';
 }
 
@@ -144,7 +152,8 @@ function is_post() {
  * @return bool true si GET, false sinon
  * 
  */
-function is_get() {
+function is_get()
+{
     return $_SERVER['REQUEST_METHOD'] === 'GET';
 }
 
@@ -158,7 +167,8 @@ function is_get() {
  * @return mixed La valeur du paramètre ou la valeur par défaut
  * 
  */
-function post($key, $default = null) {
+function post($key, $default = null)
+{
     return $_POST[$key] ?? $default;
 }
 
@@ -172,7 +182,8 @@ function post($key, $default = null) {
  * @return mixed La valeur du paramètre ou la valeur par défaut
  * 
  */
-function get($key, $default = null) {
+function get($key, $default = null)
+{
     return $_GET[$key] ?? $default;
 }
 
@@ -189,7 +200,8 @@ function get($key, $default = null) {
  * @return string La route courante (ex: 'documentation/mvc')
  * 
  */
-function current_route() {
+function current_route()
+{
     $url = $_GET['url'] ?? '';
     $url = rtrim($url, '/');
     return $url;
@@ -205,39 +217,40 @@ function current_route() {
  * @return bool true si le lien est actif, false sinon
  * 
  */
-function is_active_link($path) {
+function is_active_link($path)
+{
     $current = current_route();
     $path = ltrim($path, '/');
-    
+
     // Page d'accueil
     if (empty($path) && empty($current)) {
         return true;
     }
-    
+
     // Correspondance exacte
     if ($current === $path) {
         return true;
     }
-    
+
     // Correspondance partielle pour les sections principales uniquement
     // Éviter que "documentation" soit actif sur "documentation/mvc"
     if (!empty($path) && !empty($current)) {
         $currentParts = explode('/', $current);
         $pathParts = explode('/', $path);
-        
+
         // Si le path est une section principale (ex: "documentation")
         // et que la route courante commence par cette section
         // mais a plus de segments, alors ce n'est pas actif
         if (count($pathParts) === 1 && count($currentParts) > 1) {
             return false;
         }
-        
+
         // Correspondance partielle normale
         if (strpos($current, $path) === 0) {
             return true;
         }
     }
-    
+
     return false;
 }
 
@@ -255,17 +268,18 @@ function is_active_link($path) {
  * @return string Le token CSRF généré
  * 
  */
-function csrf_token() {
+function csrf_token()
+{
     // Démarrer la session si elle n'est pas déjà active
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    
+
     // Générer un nouveau token s'il n'existe pas
     if (!isset($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     }
-    
+
     return $_SESSION['csrf_token'];
 }
 
@@ -279,17 +293,18 @@ function csrf_token() {
  * @return bool true si le token est valide, false sinon
  * 
  */
-function verify_csrf_token($token) {
+function verify_csrf_token($token)
+{
     // Démarrer la session si elle n'est pas déjà active
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    
+
     // Vérifier que le token existe en session
     if (!isset($_SESSION['csrf_token'])) {
         return false;
     }
-    
+
     // Comparaison sécurisée des tokens (évite les attaques timing)
     return hash_equals($_SESSION['csrf_token'], $token);
 }
@@ -303,13 +318,66 @@ function verify_csrf_token($token) {
  * @return string Le nouveau token CSRF généré
  * 
  */
-function regenerate_csrf_token() {
+function regenerate_csrf_token()
+{
     // Démarrer la session si elle n'est pas déjà active
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    
+
     // Supprimer l'ancien token et en générer un nouveau
     unset($_SESSION['csrf_token']);
     return csrf_token();
+}
+
+
+
+
+
+
+
+
+/**
+ * Vérifie un mot de passe
+ */
+function verify_password($password, $hash)
+{
+    return password_verify($password, $hash);
+}
+
+
+/**
+ * Vérifie si un utilisateur est connecté
+ */
+function is_logged_in()
+{
+    if (isset($_SESSION['utilisateurs_id'])) {
+        // Vérifie si la session a expiré (2h)
+        if (isset($_SESSION['login_time'])) {
+            $elapsed = time() - $_SESSION['login_time'];
+            if ($elapsed > 2 * 60 * 60) { // 2 heures
+                logout(); // Fonction de déconnexion existante
+                set_flash('error', 'Votre session a expiré après 2h de connexion.');
+                redirect('auth/login');
+                exit;
+            }
+        }
+
+        // 🔄 Optionnel : reset du timer à chaque action
+        $_SESSION['login_time'] = time();
+
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Nettoie une chaîne de caractères
+ */
+function clean_input($data)
+{
+    $data = trim($data ?? "");
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }

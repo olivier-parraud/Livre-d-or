@@ -23,6 +23,7 @@ require_once INCLUDE_PATH . '/helpers.php';
 
 // Charger les modèles
 
+require_once MODEL_PATH . '/user_model.php';
 
 
 
