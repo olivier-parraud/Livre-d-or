@@ -100,7 +100,8 @@ function auth_register()
 /**
  * Déconnexion
  */
-// function auth_logout()
-// {
-//     logout();
-// }
+function auth_logout()
+{
+    logout();
+    
+}

@@ -381,3 +381,9 @@ function clean_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
+ function logout()
+ {
+    session_destroy();
+    redirect('');
+}

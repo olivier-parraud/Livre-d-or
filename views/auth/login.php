@@ -30,7 +30,7 @@
 
         <div class="auth-footer">
             <p>Pas encore de compte ?
-                <a href="<?php echo url('/hom'); ?>">S'inscrire</a>
+                <a href="<?php echo url('/home'); ?>">S'inscrire</a>
             </p>
         </div>
     </div>
