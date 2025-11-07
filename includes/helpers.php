@@ -351,7 +351,7 @@ function verify_password($password, $hash)
  */
 function is_logged_in()
 {
-    if (isset($_SESSION['utilisateurs_id'])) {
+    if (isset($_SESSION['users_id'])) {
         // Vérifie si la session a expiré (2h)
         if (isset($_SESSION['login_time'])) {
             $elapsed = time() - $_SESSION['login_time'];
@@ -363,7 +363,7 @@ function is_logged_in()
             }
         }
 
-        // 🔄 Optionnel : reset du timer à chaque action
+        // Optionnel : reset du timer à chaque action
         $_SESSION['login_time'] = time();
 
         return true;

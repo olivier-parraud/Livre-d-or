@@ -23,8 +23,8 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="<?php echo url(); ?>">🏠 Accueil</a></li>
 
-                    <?php if (isset($_SESSION["user_id"])): ?>
-                        <li><a href=" <?= url('auth/login'); ?>">❤️ Déconnexion ❤️</a></li>
+                    <?php if (is_logged_in()): ?>
+                        <li><a href=" <?= url('auth/deconnexion'); ?>">❤️ Déconnexion ❤️</a></li>
                         <li><a href=" <?= url('profil'); ?>"> Profil </a></li>
 
                     <?php else: ?>
