@@ -1,0 +1,1590 @@
+/* ============================================
+   CSS PHARMACIE PARRAUD - DESIGN MODERNE 2025
+   ============================================ */
+
+/* Variables CSS */
+:root {
+  /* Couleurs principales */
+  --pharma-primary: #00a896;
+  --pharma-primary-dark: #028174;
+  --pharma-primary-light: #5ce1e6;
+  --pharma-secondary: #05668d;
+  --pharma-accent: #f0f3bd;
+  --pharma-success: #4ade80;
+  --pharma-warning: #fbbf24;
+  --pharma-error: #f87171;
+
+  /* Neutres */
+  --pharma-white: #ffffff;
+  --pharma-bg: #f8fafb;
+  --pharma-bg-dark: #f1f5f9;
+  --pharma-text: #1e293b;
+  --pharma-text-light: #64748b;
+  --pharma-border: #e2e8f0;
+
+  /* Ombres */
+  --shadow-sm: 0 2px 8px rgba(0, 168, 150, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 168, 150, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 168, 150, 0.16);
+  --shadow-xl: 0 16px 48px rgba(0, 168, 150, 0.2);
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.7;
+  color: var(--pharma-text);
+  background: var(--pharma-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.pharma-hero {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  padding: 8rem 2rem 6rem;
+  overflow: hidden;
+  border-radius: 0 0 4rem 4rem;
+}
+
+.pharma-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: float 25s ease-in-out infinite;
+}
+
+.pharma-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -15%;
+  width: 60%;
+  height: 150%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 70%
+  );
+  animation: float 20s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -40px) rotate(3deg);
+  }
+  66% {
+    transform: translate(-20px, 30px) rotate(-3deg);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.hero-overlay-image-left {
+  position: absolute;
+  bottom: 0;
+  left: -80px;
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  opacity: 0.7;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.hero-overlay-image-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  opacity: 0.7;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideInDown 0.8s ease;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: slideInUp 1s ease;
+}
+
+.hero-decoration {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3rem;
+  z-index: 5;
+}
+
+.float-icon {
+  font-size: 2.5rem;
+  opacity: 0.3;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.float-icon:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.float-icon:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-pharma {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.btn-primary-pharma {
+  background: white;
+  color: var(--pharma-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-pharma:hover {
+  background: var(--pharma-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary-pharma {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-secondary-pharma:hover {
+  background: white;
+  color: var(--pharma-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-large {
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.container-pharma {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================
+   INTRO SECTION
+   ============================================ */
+
+.pharma-intro {
+  padding: 6rem 0;
+  background: white;
+}
+
+.intro-badge {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-heading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--pharma-text);
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.intro-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-image {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.owner-circle {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
+  border: 8px solid white;
+  position: relative;
+  overflow: hidden;
+}
+
+.owner-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.owner-circle::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.owner-emoji {
+  font-size: 10rem;
+  position: relative;
+  z-index: 2;
+}
+
+.owner-badge {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--pharma-border);
+}
+
+.owner-badge strong {
+  font-size: 1.5rem;
+  color: var(--pharma-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.owner-badge span {
+  color: var(--pharma-text-light);
+  font-size: 1.05rem;
+}
+
+.intro-text .lead-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--pharma-text);
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pharma-text-light);
+  margin-bottom: 2rem;
+}
+
+.intro-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--pharma-bg);
+  border-radius: 1rem;
+  border: 2px solid var(--pharma-border);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--pharma-primary);
+}
+
+.stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+  color: var(--pharma-text-light);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+
+.pharma-services {
+  padding: 6rem 0;
+  background: var(--pharma-bg);
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-subheading {
+  font-size: 1.2rem;
+  color: var(--pharma-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.service-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 2px solid var(--pharma-border);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-primary-light) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.service-box:hover::before {
+  transform: scaleX(1);
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--pharma-primary);
+}
+
+.service-box.featured {
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  border: none;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.service-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--pharma-text);
+}
+
+.service-box.featured .service-title {
+  color: white;
+}
+
+.service-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--pharma-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.service-box.featured .service-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+}
+
+.service-features li {
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  color: var(--pharma-text);
+  transition: var(--transition);
+}
+
+.service-box.featured .service-features li {
+  color: white;
+}
+
+.service-features li:hover {
+  padding-left: 0.5rem;
+  color: var(--pharma-primary);
+}
+
+.service-box.featured .service-features li:hover {
+  color: var(--pharma-accent);
+}
+
+/* ============================================
+   WHY SECTION
+   ============================================ */
+
+.pharma-why {
+  padding: 6rem 0;
+  background: white;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.why-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.why-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.why-text h4 {
+  font-size: 1.5rem;
+  color: var(--pharma-text);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.why-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--pharma-text-light);
+}
+
+.why-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual-card {
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  padding: 3rem 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 400px;
+}
+
+.visual-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.visual-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.rating {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.star {
+  font-size: 2rem;
+}
+
+.rating-text {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.pharma-contact {
+  padding: 6rem 0;
+  background: var(--pharma-bg);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.contact-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 2px solid var(--pharma-border);
+  transition: var(--transition);
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--pharma-primary);
+}
+
+.contact-box.highlight {
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  border: none;
+}
+
+.contact-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.contact-box h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--pharma-text);
+}
+
+.contact-box.highlight h3 {
+  color: white;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--pharma-border);
+  font-size: 1.05rem;
+}
+
+.hours-list li:last-child {
+  border-bottom: none;
+}
+
+.urgence-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--pharma-bg);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: var(--pharma-primary);
+}
+
+.contact-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.contact-info a {
+  color: var(--pharma-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contact-info a:hover {
+  color: var(--pharma-primary-dark);
+}
+
+.contact-box.highlight p {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.pharma-cta {
+  padding: 6rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.pharma-cta::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 70%;
+  height: 160%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: float 20s ease-in-out infinite;
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.cta-content h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cta-content p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .owner-circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .owner-emoji {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .section-heading {
+    font-size: 2.5rem;
+  }
+
+  .pharma-hero {
+    padding: 5rem 1.5rem 4rem;
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-pharma {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .container-pharma {
+    padding: 0 1rem;
+  }
+
+  .owner-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .owner-emoji {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .service-icon,
+  .contact-icon {
+    font-size: 3rem;
+  }
+
+  .why-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+/* ============================================
+   PAGES AUTHENTIFICATION (LOGIN & REGISTER)
+   ============================================ */
+
+.pharma-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-bg) 0%,
+    var(--pharma-white) 100%
+  );
+}
+
+/* Background animé */
+.auth-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.auth-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.shape-1 {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  top: -200px;
+  left: -200px;
+  animation: float 25s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary-light) 0%,
+    var(--pharma-primary) 100%
+  );
+  bottom: -150px;
+  right: -150px;
+  animation: float 20s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-secondary) 0%,
+    var(--pharma-primary) 100%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 30s ease-in-out infinite;
+}
+
+/* Container principal */
+.auth-content {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1300px;
+  width: 100%;
+  background: white;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+/* Left Side - Branding */
+.auth-branding {
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  color: white;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-branding::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: float 20s ease-in-out infinite;
+}
+
+.branding-content {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo-icon {
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.brand-logo h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.branding-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+  margin-bottom: 2.5rem;
+}
+
+.brand-features {
+  margin-bottom: 3rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.brand-owner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.owner-avatar-small {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.owner-info-small {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.owner-info-small strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.owner-info-small span {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Right Side - Form */
+.auth-form-container {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card-pharma {
+  width: 100%;
+  max-width: 500px;
+}
+
+.auth-header-pharma {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-header-pharma h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--pharma-text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.auth-header-pharma p {
+  font-size: 1.05rem;
+  color: var(--pharma-text-light);
+}
+
+.auth-form-pharma {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group-pharma {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group-pharma label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--pharma-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-pharma {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid var(--pharma-border);
+  border-radius: 0.75rem;
+  background: var(--pharma-bg);
+  color: var(--pharma-text);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.input-pharma:focus {
+  outline: none;
+  border-color: var(--pharma-primary);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0, 168, 150, 0.1);
+}
+
+.input-pharma::placeholder {
+  color: var(--pharma-text-light);
+  opacity: 0.6;
+}
+
+.field-hint {
+  font-size: 0.85rem;
+  color: var(--pharma-text-light);
+  margin-top: 0.25rem;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--pharma-primary);
+}
+
+.checkbox-label {
+  font-size: 0.95rem;
+  color: var(--pharma-text);
+}
+
+.checkbox-label a {
+  color: var(--pharma-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+.link-forgot {
+  font-size: 0.95rem;
+  color: var(--pharma-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.link-forgot:hover {
+  color: var(--pharma-primary-dark);
+}
+
+.form-checkbox {
+  margin: 0.75rem 0;
+}
+
+.btn-submit-pharma {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.btn-submit-pharma:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-submit-pharma:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--pharma-text-light);
+  font-size: 0.9rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--pharma-border);
+}
+
+.auth-divider span {
+  padding: 0 1rem;
+  font-weight: 600;
+}
+
+.auth-footer-pharma {
+  text-align: center;
+}
+
+.auth-footer-pharma p {
+  font-size: 1rem;
+  color: var(--pharma-text-light);
+  margin-bottom: 1rem;
+}
+
+.btn-secondary-auth {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pharma-primary);
+  background: var(--pharma-bg);
+  border: 2px solid var(--pharma-primary);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+.btn-secondary-auth:hover {
+  background: var(--pharma-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-help {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--pharma-border);
+}
+
+.auth-help p {
+  font-size: 0.95rem;
+  color: var(--pharma-text-light);
+}
+
+.auth-help a {
+  color: var(--pharma-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-help a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Auth Pages */
+@media (max-width: 1024px) {
+  .auth-content {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-branding {
+    padding: 3rem 2rem;
+  }
+
+  .branding-content h2 {
+    font-size: 2rem;
+  }
+
+  .brand-logo h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pharma-auth-page {
+    padding: 1rem;
+  }
+
+  .auth-content {
+    border-radius: 1rem;
+  }
+
+  .auth-branding {
+    padding: 2rem;
+  }
+
+  .branding-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .brand-description {
+    font-size: 1rem;
+  }
+
+  .auth-form-container {
+    padding: 2rem;
+  }
+
+  .auth-header-pharma h1 {
+    font-size: 2rem;
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-branding {
+    padding: 1.5rem;
+  }
+
+  .auth-form-container {
+    padding: 1.5rem;
+  }
+
+  .brand-logo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .auth-header-pharma h1 {
+    font-size: 1.75rem;
+  }
+}
