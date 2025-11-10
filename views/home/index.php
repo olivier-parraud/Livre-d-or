@@ -161,7 +161,7 @@
                         <span class="star">⭐</span>
                         <span class="star">⭐</span>
                     </div>
-                    <p class="rating-text">4.99/5 basé sur 500 millions d'avis clients</p>
+                    <p class="rating-text">4.99/5 basé sur +500 millions d'avis clients</p>
                 </div>
             </div>
         </div>
