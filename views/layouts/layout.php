@@ -31,14 +31,15 @@
 
                 <ul class="pharma-nav-menu">
                     <li><a href="<?php echo url(); ?>" class="pharma-nav-link">🏠 Accueil</a></li>
+                    <li><a href="<?= url('commentaires'); ?>" class="pharma-nav-link">💬 Vos Avis</a></li>
 
                     <?php if (is_logged_in()): ?>
                         <li><a href=" <?= url('profil'); ?>" class="pharma-nav-link">👤 Profil</a></li>
-                        <li><a href=" <?= url('auth/deconnexion'); ?>" class="pharma-nav-link pharma-nav-cta"> ❤️ Déconnexion ❤️ </a></li>
+                        <li><a href=" <?= url('auth/deconnexion'); ?>" class="pharma-nav-link pharma-nav-cta">🚪 Déconnexion</a></li>
 
                     <?php else: ?>
-                        <li><a href="<?= url('auth/register'); ?>" class="pharma-nav-link">✍️  Inscription</a></li>
-                        <li><a href="<?= url('auth/login'); ?>" class="pharma-nav-link pharma-nav-cta">Connexion</a></li>
+                        <li><a href="<?= url('auth/register'); ?>" class="pharma-nav-link">✍️ Inscription</a></li>
+                        <li><a href="<?= url('auth/login'); ?>" class="pharma-nav-link pharma-nav-cta">🔐 Connexion</a></li>
                     <?php endif; ?>
 
 

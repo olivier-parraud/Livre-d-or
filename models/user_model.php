@@ -43,9 +43,36 @@ function create_user($login, $password)
  */
 function get_user_by_id($id)
 {
-    // Exclure les utilisateurs supprimés
-    $query = "SELECT * FROM users WHERE id = ? AND deleted_at IS NULL LIMIT 1";
+    $query = "SELECT * FROM utilisateurs WHERE id = ? LIMIT 1";
     return db_select_one($query, [$id]);
+}
+
+/**
+ * Met à jour le login d'un utilisateur
+ */
+function update_user_login($id, $new_login)
+{
+    $new_login = mb_convert_case(trim($new_login), MB_CASE_TITLE, 'UTF-8');
+    $query = "UPDATE utilisateurs SET login = ? WHERE id = ?";
+    return db_execute($query, [$new_login, $id]);
+}
+
+/**
+ * Met à jour le mot de passe d'un utilisateur
+ */
+function update_user_password($id, $hashed_password)
+{
+    $query = "UPDATE utilisateurs SET password = ? WHERE id = ?";
+    return db_execute($query, [$hashed_password, $id]);
+}
+
+/**
+/**
+ * Hash un mot de passe
+ */
+function hash_password($password)
+{
+    return password_hash($password, PASSWORD_DEFAULT);
 }
 
 
@@ -60,16 +87,6 @@ function update_user($id, $first_name, $last_name, $email)
     $last_name = mb_convert_case(trim($last_name), MB_CASE_TITLE, 'UTF-8');
     $query = "UPDATE users SET first_name = ?, last_name = ?, email = ? WHERE id = ?";
     return db_execute($query, [$first_name, $last_name, $email, $id]);
-}
-
-/**
- * Met à jour le mot de passe d'un utilisateur
- */
-function update_user_password($id, $password)
-{
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-    $query = "UPDATE users SET password_hash = ? WHERE id = ?";
-    return db_execute($query, [$hashed_password, $id]);
 }
 
 
@@ -119,4 +136,3 @@ function get_all_users($limit = null, $offset = 0)
 }
 
 //Crée un nouvel utilisateur
- 

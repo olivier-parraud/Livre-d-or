@@ -1,7 +1,13 @@
 <?php
+
 /**
  * Fichier d'amorçage pour l'initialisation de l'application
  */
+
+// Désactiver le cache OPcache en développement
+if (function_exists('opcache_reset')) {
+    opcache_reset();
+}
 
 // Démarrer la session si elle n'est pas déjà démarrée
 if (session_status() == PHP_SESSION_NONE) {

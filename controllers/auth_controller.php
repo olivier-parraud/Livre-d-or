@@ -29,9 +29,9 @@ function auth_login()
 
             if ($user && verify_password($password, $user['password'])) {
                 // Connexion réussie
-                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['users_id'] = $user['id'];
                 $_SESSION['user_login'] = $user['login'];
-                
+
                 $_SESSION['login_time'] = time();
 
                 // Message de bienvenue avec le prénom (première lettre en majuscule)
@@ -103,5 +103,6 @@ function auth_register()
 function auth_deconnexion()
 {
     logout();
-    
+    set_flash('success', 'Vous avez été déconnecté avec succès. À bientôt ! 👋');
+    redirect('home');
 }
