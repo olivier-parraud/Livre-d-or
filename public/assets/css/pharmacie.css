@@ -50,6 +50,180 @@ body {
 }
 
 /* ============================================
+   NAVBAR PHARMACIE - PURE CSS
+   ============================================ */
+
+.pharma-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    135deg,
+    var(--pharma-primary) 0%,
+    var(--pharma-secondary) 100%
+  );
+  box-shadow: var(--shadow-md);
+}
+
+.pharma-navbar {
+  width: 100%;
+}
+
+.pharma-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pharma-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.pharma-logo-icon {
+  font-size: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pharma-nav-logo:hover {
+  transform: translateY(-2px);
+}
+
+.pharma-nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pharma-nav-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.pharma-nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pharma-nav-cta {
+  background: white;
+  color: var(--pharma-primary);
+  font-weight: 600;
+}
+
+.pharma-nav-cta:hover {
+  background: var(--pharma-accent);
+  color: var(--pharma-secondary);
+  transform: translateY(-2px);
+}
+
+/* Menu toggle checkbox (hidden) */
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle-label span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .pharma-nav-container {
+    padding: 1rem;
+  }
+
+  .menu-toggle-label {
+    display: flex;
+  }
+
+  .pharma-nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: linear-gradient(
+      135deg,
+      var(--pharma-primary) 0%,
+      var(--pharma-secondary) 100%
+    );
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .menu-toggle:checked ~ .pharma-nav-menu {
+    max-height: 500px;
+    padding: 1rem;
+  }
+
+  .pharma-nav-menu li {
+    width: 100%;
+  }
+
+  .pharma-nav-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Animation du hamburger */
+  .menu-toggle:checked ~ .menu-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .menu-toggle:checked ~ .menu-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked ~ .menu-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+}
+
+/* ============================================
    HERO SECTION
    ============================================ */
 

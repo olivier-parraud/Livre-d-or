@@ -5,7 +5,7 @@
         <img src="<?= url('assets/images/crane.png') ?>" alt="Pharmacie" class="hero-overlay-image-right">
     </div>
     <div class="hero-container">
-        <div class="hero-badge">💊 Depuis 2008</div>
+        <div class="hero-badge"> Depuis 2008</div>
         <h1 class="hero-title">Pharmacie Parraud</h1>
         <p class="hero-subtitle">Votre santé, notre engagement</p>
         <p class="hero-description">Pharmacie familiale dirigée par Olivier Parraud, expert en soins pharmaceutiques depuis plus de 15 ans</p>
@@ -118,8 +118,9 @@
                         <div class="why-icon">🎓</div>
                         <div class="why-text">
                             <h4>Expertise Reconnue</h4>
-                            <p>Olivier Parraud, diplômé de la Faculté La Plateforme de Paris, formation continue permanente.
-                                Un ancien élève du grand Ely Gendrau, devellopeur web expert en son domaine.
+                            <p>Olivier Parraud, diplômé de la Faculté "La Plateforme de Toulon".
+                                <br> Une formation reconnuu par Macro et dirigé d'une main de maître par 
+                                 le grand Jean-Ely Gendrau, devellopeur web expert en son domaine.
                             </p>
                         </div>
                     </div>
@@ -127,24 +128,24 @@
                         <div class="why-icon">❤️</div>
                         <div class="why-text">
                             <h4>Écoute & Bienveillance</h4>
-                            <p>Une équipe à votre écoute pour des conseils personnalisés et adaptés à vos besoins</p>
+                            <p>Une équipe à votre écoute pour des conseils personnalisés et adaptés à vos besoins.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-icon">🔒</div>
                         <div class="why-text">
                             <h4>Confidentialité Garantie</h4>
-                            <p>* Respect absolu du secret professionnel et de votre vie privée
+                            <p> Respect <strong> absolu</strong> du secret professionnel et de votre vie privée. *
 
                             </p>
-                            <p> * Règle rarement appliquée.</p>
+                            <p><u> * Règle rarement appliquée.</u></p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-icon">⚡</div>
                         <div class="why-text">
                             <h4>Service Rapide</h4>
-                            <p>Préparation et délivrance rapide de vos ordonnances, sans compromis sur la qualité</p>
+                            <p>Préparation et délivrance rapide de vos ordonnances, avec compromis sur la qualité.</p>
                         </div>
                     </div>
                 </div>
@@ -160,7 +161,7 @@
                         <span class="star">⭐</span>
                         <span class="star">⭐</span>
                     </div>
-                    <p class="rating-text">4.99/5 basé sur 500 millions avis clients</p>
+                    <p class="rating-text">4.99/5 basé sur 500 millions d'avis clients</p>
                 </div>
             </div>
         </div>
@@ -176,8 +177,8 @@
                 <h3>Horaires d'ouverture</h3>
                 <ul class="hours-list">
                     <li><strong>Lundi - Vendredi</strong><span>10h30 - 14h00</span></li>
-                    <li><strong>Samedi</strong><span>10h30 - 12h00</span></li>
-                    <li><strong>Dimanche</strong><span>10h00 - 13h00</span></li>
+                    <li><strong>Samedi</strong><span>10h30 - 13h00</span></li>
+                    <li><strong>Dimanche</strong><span>10h30 - 13h00</span></li>
                 </ul>
                 <p class="urgence-note">🚨 Pharmacie de garde: consultez notre affichage</p>
             </div>
@@ -195,7 +196,7 @@
                     </p>
 
                     <p><strong>Email:</strong><br>
-                        <a href="mailto:contact@pharmacie-parraud.fr">olivier-parraud@laplateforme.io</a>
+                        <a href="mailto:contact@pharmacie-parraud.fr">olivier.parraud@laplateforme.io</a>
                     </p>
                 </div>
             </div>
@@ -217,15 +218,13 @@
     <section class="pharma-cta">
         <div class="container-pharma">
             <div class="cta-content">
-                <h2>Rejoignez notre communauté</h2>
-                <p>Créez votre compte pour accéder à nos services en ligne, renouveler vos ordonnances et bénéficier de conseils personnalisés</p>
+                <h2>Voir les avis des clients.. mmhh des patients</h2>
+                <p> Retrouvez des avis autenthique de patients, sans pots de vins et sans langue de bois</p>
                 <div class="cta-buttons">
                     <a href="<?= url('auth/register') ?>" class="btn-pharma btn-large btn-primary-pharma">
-                        S'inscrire gratuitement
+                        Avis patients
                     </a>
-                    <a href="<?= url('auth/login') ?>" class="btn-pharma btn-large btn-secondary-pharma">
-                        J'ai déjà un compte
-                    </a>
+                   
                 </div>
             </div>
         </div>

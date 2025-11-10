@@ -14,26 +14,31 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="pharma-header">
+        <nav class="pharma-navbar">
+            <div class="pharma-nav-container">
+                <a href="<?php echo url(); ?>" class="pharma-nav-logo">
+                    <span class="pharma-logo-icon">💊</span>
+                    <span class="pharma-logo-text">Pharmacie Parraud<? ?></span>
+                </a>
 
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <a href="<?php echo url(); ?>"><?php echo APP_NAME; ?></a>
-                </div>
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="menu-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
 
-                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="<?php echo url(); ?>">🏠 Accueil</a></li>
+                <ul class="pharma-nav-menu">
+                    <li><a href="<?php echo url(); ?>" class="pharma-nav-link">🏠 Accueil</a></li>
 
                     <?php if (is_logged_in()): ?>
-                        <li><a href=" <?= url('auth/deconnexion'); ?>">❤️ Déconnexion ❤️</a></li>
-                        <li><a href=" <?= url('profil'); ?>"> Profil </a></li>
+                        <li><a href=" <?= url('profil'); ?>" class="pharma-nav-link">👤 Profil</a></li>
+                        <li><a href=" <?= url('auth/deconnexion'); ?>" class="pharma-nav-link pharma-nav-cta"> ❤️ Déconnexion ❤️ </a></li>
 
                     <?php else: ?>
-                        <li><a href="<?= url('auth/register'); ?>"> Inscription </a></li>
-                        <li><a href="<?= url('auth/login'); ?>"> Connexion </a></li>
+                        <li><a href="<?= url('auth/register'); ?>" class="pharma-nav-link">✍️  Inscription</a></li>
+                        <li><a href="<?= url('auth/login'); ?>" class="pharma-nav-link pharma-nav-cta">Connexion</a></li>
                     <?php endif; ?>
 
 
