@@ -119,8 +119,7 @@
                             </div>
 
                             <div style="padding: 1.5rem; background: var(--pharma-bg); border-radius: 12px; margin-top: 1rem; text-align: left;">
-                                <p style="color: var(--pharma-text); line-height: 1.8; margin: 0; padding: 0; font-size: 1.05rem; white-space: pre-wrap; text-align: left !important; display: block;">
-                                    <?= escape($comment['commentaire']) ?>
+                                   <?= escape($comment['commentaire']) ?>
                                 </p>
                             </div>
                         </div>

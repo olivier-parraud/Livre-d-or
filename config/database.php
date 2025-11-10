@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuration de la base de données et des constantes de l'application
  */
@@ -11,7 +12,10 @@ define('DB_PASS', 'root');
 define('DB_CHARSET', 'utf8mb4');
 
 // Configuration de l'application
-define('BASE_URL', 'http://livreor.test');
+// BASE_URL dynamique : s'adapte automatiquement au serveur utilisé
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'livreor.test';
+define('BASE_URL', $protocol . '://' . $host);
 define('APP_NAME', 'livreor');
 define('APP_VERSION', '1.0.0');
 
