@@ -203,10 +203,10 @@
 
             <div class="contact-box highlight">
                 <div class="contact-icon">👨‍⚕️</div>
-                <h3>Rencontrez Olivier Parraud</h3>
-                <p>Votre pharmacien titulaire est disponible pour des consultations personnalisées. Prenez rendez-vous pour un entretien pharmaceutique approfondi.</p>
-                <a href="<?= url('auth/register') ?>" class="btn-pharma btn-primary-pharma">
-                    Prendre RDV
+                <h3> Lisez nos avis</h3>
+                <p> Retrouvez ici tout nos avis 100% authentiques de personnes humaines ayant la capacité de réflechir seul et sous aucune influence quelconque </p>
+                <a href="<?= url('commentaires/index') ?>" class="btn-pharma btn-primary-pharma">
+                    Avis
                 </a>
             </div>
         </div>
@@ -222,7 +222,7 @@
                 <p> Retrouvez des avis autenthique de patients, sans pots de vins et sans langue de bois</p>
                 <div class="cta-buttons">
                     <a href="<?= url('auth/register') ?>" class="btn-pharma btn-large btn-primary-pharma">
-                        Avis patients
+                        Avis
                     </a>
                    
                 </div>

@@ -1,10 +1,6 @@
 <?php
 // Contrôleur des commentaires
 
-// Charger le modèle des commentaires si pas déjà chargé
-if (!function_exists('get_all_commentaires')) {
-    require_once MODEL_PATH . '/commentaire_model.php';
-}
 
 /**
  * Page des commentaires (livre d'or)
