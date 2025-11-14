@@ -1,6 +1,9 @@
 <?php
 // Contrôleur d'authentification
 
+
+
+
 /**
  * Page de connexion
  */

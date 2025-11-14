@@ -119,7 +119,7 @@
                         <div class="why-text">
                             <h4>Expertise Reconnue</h4>
                             <p>Olivier Parraud, diplômé de la Faculté "La Plateforme de Toulon".
-                                <br> Une formation reconnuu par Macro et dirigé d'une main de maître par 
+                                <br> Une formation reconnu dirigé d'une main de maître par 
                                  le grand Jean-Ely Gendrau, devellopeur web expert en son domaine.
                             </p>
                         </div>
